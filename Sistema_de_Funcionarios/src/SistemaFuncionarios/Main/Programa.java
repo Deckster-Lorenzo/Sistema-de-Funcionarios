@@ -4,8 +4,6 @@ import SistemaFuncionarios.Dominio.Funcionario;
 
 public class Programa {
     public static void main(String[] args) {
-        int count = 0;
-        double i = 0.0;
         Funcionario[] funcionario = new Funcionario[4];
 
         funcionario[0] = new Funcionario();
@@ -38,20 +36,8 @@ public class Programa {
             f.imprimeDados();
         }
 
-        for (Funcionario f : funcionario) {
-            i += f.salario;
-            count++;
-        }
-        double media = i / count;
-        System.out.println("Média salarial dos Funcionários: R$" + media);
+        System.out.println("Funcionários ativos: " +Funcionario.imprimeQuantosFuncionariosAtivos(funcionario));
+        System.out.println("Média Salarial: R$" +Funcionario.imprimeMediaSalarial(funcionario));
 
-        count = 0;
-
-        for (Funcionario f : funcionario) {
-            if (f.ativo) {
-                count++;
-            }
-        }
-        System.out.println("\nNúmero de funcionários ativos: " + count);
     }
 }

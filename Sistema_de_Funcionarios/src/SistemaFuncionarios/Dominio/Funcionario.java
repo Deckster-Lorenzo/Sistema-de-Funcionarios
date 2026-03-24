@@ -8,7 +8,6 @@ public class Funcionario {
 
     public void imprimeDados() {
         System.out.println("Nome do Funcionário: " + this.nome);
-
         System.out.println("Idade do Funcionário: " + this.idade);
 
         if (this.salario < 2000) {
@@ -26,5 +25,30 @@ public class Funcionario {
         System.out.println("\n\n");
     }
 
+    public static int imprimeQuantosFuncionariosAtivos(Funcionario[] funcionario) {
+        if (funcionario == null) {
+            return 0;
+        }
+        int ativos = 0;
+        for (Funcionario f : funcionario) {
+            if (f != null && f.ativo) {
+                ativos++;
+            }
+        }
+        return ativos;
+    }
 
+    public static double imprimeMediaSalarial(Funcionario[] funcionario){
+        if(funcionario == null){
+            return 0;
+        }
+        double media = 0;
+        for(Funcionario f : funcionario){
+            media += f.salario;
+        }
+        return media / funcionario.length;
+    }
 }
+
+
+
